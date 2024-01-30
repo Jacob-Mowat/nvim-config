@@ -46,6 +46,22 @@ return {
                     require("lspconfig")[server_name].setup {}
                 end,
 
+                ["pylsp"] = function()
+                    local lspconfig = require("lspconfig")
+
+                    lspconfig.pylsp.setup({
+                        settings = {
+                            pylsp = {
+                                plugins = {
+                                    pycodestyle = {
+                                        maxLineLength = 120
+                                    }
+                                }
+                            }
+                        }
+                    })
+                end,
+
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
