@@ -24,7 +24,13 @@ return {
         },
 
         config = function()
-            require("telescope").setup({})
+            require("telescope").setup({
+                defaults = {
+                    file_ignore_patterns = {
+                        "node_modules"
+                    }
+                }
+            })
 
             local builtin = require('telescope.builtin')
 
