@@ -6,7 +6,7 @@ return {
     config = function()
         require'nvim-treesitter.configs'.setup {
             -- A list of parser names, or "all"
-            ensure_installed = {"javascript", "typescript", "c", "lua", "rust", "python" },
+            ensure_installed = {"javascript", "typescript", "tsx", "c", "lua", "rust", "python", "json", "yaml", "html", "css", "swift" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
@@ -27,6 +27,10 @@ return {
             },
 
             indent = { enabled = true },
+
+            autotag = {
+               enabled = true,
+            }
         }
     end
 }

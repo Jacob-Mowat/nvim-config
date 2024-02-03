@@ -74,6 +74,18 @@ return {
                         }
                     }
                 end,
+
+                ["tsserver"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.tsserver.setup({
+                        filetypes = {
+                            "typescript",
+                            "typescriptreact",
+                            "typescript.tsx"
+                        },
+                        cmd = { "typescript-language-server", "--stdio" }
+                    })
+                end,
             }
         })
 
